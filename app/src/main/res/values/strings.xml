@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Taller1</string>
+    <string name="tvuser">USUARIO</string>
+    <string name="tvpass">CONTRASEÑA</string>
+    <string name="tvforgot">Olvidó su contraseña</string>
+    <string name="cbremb">Recordar datos</string>
+    <string name="cbtac">Acepto términos y condiciones</string>
+    <string name="btnlogin">Iniciar sesión</string>
+    <string name="btnsignup">Registrarse</string>
+</resources>
