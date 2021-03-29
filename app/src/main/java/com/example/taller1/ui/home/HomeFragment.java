@@ -1,6 +1,7 @@
 package com.example.taller1.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.taller1.GeometryActivity;
 import com.example.taller1.HomeActivity;
 import com.example.taller1.R;
 
@@ -47,7 +49,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btngeometry:
-                Toast.makeText(getActivity(), "Ingrese los datos.", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(), "Ingrese los datos.", Toast.LENGTH_LONG).show();
+                Intent i1 = new Intent(getActivity(), GeometryActivity.class);
+                startActivity(i1);
+                break;
+
+            case R.id.btnphisics:
+
+                break;
+
+            case R.id.btntext:
+
                 break;
         }
     }

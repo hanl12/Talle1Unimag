@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GeometryActivity">
+
+    <TextView
+        android:id="@+id/tvgeometry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/btngeometry"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvdata1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/tvdata1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvgeometry" />
+
+    <TextView
+        android:id="@+id/tvx1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/tvx1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvdata1" />
+
+    <TextView
+        android:id="@+id/tvy1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvy1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtx1" />
+
+    <TextView
+        android:id="@+id/tvy2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvy2"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tvy1"
+        app:layout_constraintTop_toBottomOf="@+id/edtx2" />
+
+    <TextView
+        android:id="@+id/tvx2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/tvx2"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tvx1"
+        app:layout_constraintTop_toBottomOf="@+id/tvdata1" />
+
+    <EditText
+        android:id="@+id/edtx1"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberSigned|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvx1" />
+
+    <EditText
+        android:id="@+id/edty1"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvx1" />
+
+    <EditText
+        android:id="@+id/edtx2"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvx1" />
+
+    <EditText
+        android:id="@+id/edty2"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:inputType="numberSigned|number|numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvx1" />
+
+    <Spinner
+        android:id="@+id/spnoperationg"
+        android:layout_width="351dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edty1" />
+
+    <Button
+        android:id="@+id/btncalculateg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/btncalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnoperationg" />
+
+    <TextView
+        android:id="@+id/tvtextresults"
+        android:layout_width="360dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tvtextresults"
+        android:textAlignment="center"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncalculateg"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvresults"
+        android:layout_width="239dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
+        android:text="@string/tvresults"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtextresults" />
+</androidx.constraintlayout.widget.ConstraintLayout>

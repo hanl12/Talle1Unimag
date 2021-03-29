@@ -32,5 +32,13 @@
     <string name="btngeometry">GEOMETRÍA</string>
     <string name="tvhelp1">APP v1 DESARROLLADA POR:</string>
     <string name="tvlogout">Confirmar cierre de sesión</string>
+    <string name="tvdata1">Ingrese los datos correspondientes</string>
+    <string name="tvx1">X1</string>
+    <string name="tvx2">X2</string>
+    <string name="tvy1">Y1</string>
+    <string name="tvy2">Y2</string>
+    <string name="btncalculate">CALCULAR</string>
+    <string name="tvresults" />
+    <string name="tvtextresults" />
 
 </resources>
