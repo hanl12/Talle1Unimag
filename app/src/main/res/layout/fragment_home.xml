@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <Button
+        android:id="@+id/btntext"
+        android:layout_width="260dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="220dp"
+        android:text="@string/btntext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnphisics"
+        android:layout_width="260dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/btnphisics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btngeometry"
+        android:layout_width="260dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="376dp"
+        android:text="@string/btngeometry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="16dp"
+        android:layout_height="8dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

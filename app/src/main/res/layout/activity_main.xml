@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="60dp"
         android:text="@string/tvuser"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,11 +23,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="22dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv1"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
     <TextView
         android:id="@+id/tvpass"
@@ -47,18 +47,18 @@
         android:layout_marginStart="96dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvpass" />
 
     <TextView
         android:id="@+id/tvforgot"
-        android:background="#dadada"
-        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="36dp"
+        android:background="#dadada"
+        android:clickable="true"
         android:text="@string/tvforgot"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtpass" />
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:text="@string/cbremb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvforgot" />
@@ -77,8 +77,8 @@
         android:id="@+id/cbtac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="4dp"
         android:text="@string/cbtac"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbremb" />
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:enabled="false"
         android:text="@string/btnlogin"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,4 +103,17 @@
         android:text="@string/btnsignup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+
+    <TextView
+        android:id="@+id/tvida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvida"
+        android:textColor="#FF0000"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtpass"
+        tools:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

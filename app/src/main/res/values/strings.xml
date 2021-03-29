@@ -7,4 +7,30 @@
     <string name="cbtac">Acepto términos y condiciones</string>
     <string name="btnlogin">Iniciar sesión</string>
     <string name="btnsignup">Registrarse</string>
+    <string name="tvida">DATOS INVÁLIDOS</string>
+    <string name="tvtitleforgot">RECUPERAR CONTRASEÑA</string>
+    <string name="btncode">ENVIAR CÓDIGO</string>
+    <string name="tvemail">CORREO</string>
+    <string name="tvcode">CÓDIGO</string>
+    <string name="btnvalidate">VALIDAR</string>
+    <string name="tvnp">Nueva contraseña</string>
+    <string name="tvcp">Confirmar contraseña</string>
+    <string name="btnchange">CAMBIAR</string>
+    <string name="tvname">NOMBRE</string>
+    <string name="tvlname">APELLIDO</string>
+    <string name="tvsex">SEXO</string>
+    <string name="btnsave">GUARDAR</string>
+    <string name="tvtitlesu">REGISTRARSE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_help">Ayuda</string>
+    <string name="title_logout">Cerrar sesión</string>
+    <string name="btnphisics">FÍSICA</string>
+    <string name="btntext">TEXTO</string>
+    <string name="btngeometry">GEOMETRÍA</string>
+    <string name="tvhelp1">APP v1 DESARROLLADA POR:</string>
+    <string name="tvlogout">Confirmar cierre de sesión</string>
+
 </resources>

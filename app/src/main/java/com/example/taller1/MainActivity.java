@@ -2,7 +2,12 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -13,27 +18,34 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnlogin, btnsignup;
     private EditText edtuser, edtpass;
     private CheckBox cbremb, cbtac;
-    private TextView tvforgot;
-    private ArrayList<String> Users = new ArrayList<String>();
-    private ArrayList<String> Passwords = new ArrayList<String>();
+    private TextView tvforgot, tvida;
+    public static ArrayList<Users> UsersA = new ArrayList<Users>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Default users and passwords
-        Users.add("admin"); Users.add("user"); Users.add("user2");
-        Passwords.add("admin"); Passwords.add("user"); Passwords.add("user2");
+//        Default users
+        CreateUser("Admin", "Admin", "ad@min.com", "admin",'M');
+        CreateUser("User", "User", "us@er.com", "user",'M');
+        CreateUser("Test", "Test", "tes@t.com", "test",'F');
 
 //        Buttons
         btnlogin = (Button)findViewById(R.id.btnlogin);
@@ -42,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnsignup.setOnClickListener(this);
         tvforgot = (TextView)findViewById(R.id.tvforgot);
         tvforgot.setOnClickListener(this);
+        tvida = (TextView)findViewById(R.id.tvida);
 
 //        CheckBoxs
         cbremb = (CheckBox)findViewById(R.id.cbremb);
@@ -62,6 +75,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtuser = (EditText)findViewById(R.id.edtuser);
         edtpass = (EditText)findViewById(R.id.edtpass);
 
+        uploadPreferences();
+
+    }
+
+    private void uploadPreferences() {
+        SharedPreferences preferences = getSharedPreferences("credencials", Context.MODE_PRIVATE);
+        String userG = preferences.getString("user", "");
+        String passG = preferences.getString("pass", "");
+
+        edtuser.setText(userG);
+        edtpass.setText(passG);
     }
 
     @Override
@@ -70,26 +94,60 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnlogin:
                 if(validateEmpty()){
                     if(validateUser()){
-
+                        tvida.setVisibility(v.INVISIBLE);
+                        if(cbremb.isChecked()){
+                            String userS = edtuser.getText().toString();
+                            String passS = edtpass.getText().toString();
+                            savePreferences(userS,passS);
+                        }
+                        else{
+                            savePreferences("","");
+                        }
+                        Intent i2 = new Intent(getApplicationContext(), HomeActivity.class);
+                        startActivity(i2);
                     }
                     else{
-                        Toast.makeText(getApplicationContext(), "Datos incorrectos.", Toast.LENGTH_LONG).show();
+                        tvida.setVisibility(v.VISIBLE);
                     }
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Ingrese los datos.", Toast.LENGTH_LONG).show();
                 }
                 break;
+
+            case R.id.btnsignup:
+                Intent i = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(i);
+                break;
+
+            case R.id.tvforgot:
+                Intent i2 = new Intent(getApplicationContext(), ForgotActivity.class);
+                startActivity(i2);
+                break;
         }
     }
 
+    private void savePreferences(String usera, String passa) {
+
+        SharedPreferences preferences = getSharedPreferences("credencials", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("user", usera);
+        editor.putString("pass", passa);
+        editor.apply();
+    }
+
+    public static void CreateUser(String name, String LName, String email, String password, Character sex){
+        Users UserAux = new Users(name,LName,email,password,sex);
+        UsersA.add(UserAux);
+    }
+
     public boolean validateEmpty(){
-        if (TextUtils.isEmpty(edtuser.getText().toString()) || TextUtils.isDigitsOnly(edtuser.getText().toString())){
+        if (TextUtils.isEmpty(edtuser.getText().toString())){
             return false;
         }
-
         else{
-            if(TextUtils.isEmpty(edtpass.getText().toString()) || TextUtils.isDigitsOnly(edtpass.getText().toString())){
+            if(TextUtils.isEmpty(edtpass.getText().toString())){
                 return false;
             } else {
                return true;
@@ -98,31 +156,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public boolean validateUser(){
-        for(String user : Users){
-            if(edtuser.getText().toString().equals(user)){
-                int index = Users.indexOf(user);
+        for(Users user : UsersA){
+            if(edtuser.getText().toString().equals(user.getEmail().toString())){
 
-                if (edtpass.getText().toString().equals(Passwords.get(index))){
+                if (edtpass.getText().toString().equals(user.getPassword().toString())){
                     return true;
                 }
                 break;
             }
         }
         return false;
-    }
-
-    public ArrayList getUsers() {
-        return Users;
-    }
-
-    public void setUsers(ArrayList<String> users) {
-        Users = users;
-    }
-    public ArrayList getPasswords() {
-        return Passwords;
-    }
-
-    public void setPasswords(ArrayList<String> passwords) {
-        Passwords = passwords;
     }
 }
