@@ -14,6 +14,7 @@
         android:layout_marginTop="56dp"
         android:text="@string/btngeometry"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,7 +143,7 @@
         android:layout_width="360dp"
         android:layout_height="38dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tvtextresults"
         android:textAlignment="center"
         android:visibility="invisible"
@@ -150,16 +151,4 @@
         app:layout_constraintTop_toBottomOf="@+id/btncalculateg"
         tools:visibility="invisible" />
 
-    <TextView
-        android:id="@+id/tvresults"
-        android:layout_width="239dp"
-        android:layout_height="138dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="11dp"
-        android:gravity="center"
-        android:text="@string/tvresults"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvtextresults" />
 </androidx.constraintlayout.widget.ConstraintLayout>

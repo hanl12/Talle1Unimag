@@ -37,7 +37,6 @@ public class GeometryActivity extends AppCompatActivity implements View.OnClickL
         edty2 = (EditText)findViewById(R.id.edty2);
 
         tvtextresults = (TextView)findViewById(R.id.tvtextresults);
-        tvresults = (TextView)findViewById(R.id.tvresults);
 
         spnoperationg = (Spinner)findViewById(R.id.spnoperationg);
         String[] operation = {op1,op2,op3};

@@ -19,11 +19,12 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.taller1.GeometryActivity;
 import com.example.taller1.HomeActivity;
 import com.example.taller1.R;
+import com.example.taller1.TextActivity;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private HomeViewModel homeViewModel;
-    private Button btngeometry;
+    private Button btngeometry,btntext,btnphisics;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,6 +35,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         btngeometry = (Button)root.findViewById(R.id.btngeometry);
         btngeometry.setOnClickListener(this);
+
+        btntext = (Button)root.findViewById(R.id.btntext);
+        btntext.setOnClickListener(this);
+
+        btnphisics = (Button)root.findViewById(R.id.btnphisics);
+        btnphisics.setOnClickListener(this);
 
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -49,7 +56,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btngeometry:
-//                Toast.makeText(getActivity(), "Ingrese los datos.", Toast.LENGTH_LONG).show();
                 Intent i1 = new Intent(getActivity(), GeometryActivity.class);
                 startActivity(i1);
                 break;
@@ -59,7 +65,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btntext:
-
+                Intent i2 = new Intent(getActivity(), TextActivity.class);
+                startActivity(i2);
                 break;
         }
     }
