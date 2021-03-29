@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VelocityActivity">
+
+    <TextView
+        android:id="@+id/tvvelocity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="85dp"
+        android:text="@string/btnvelocity"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtdistance"
+        android:layout_width="117dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvdistance"
+        app:layout_constraintTop_toBottomOf="@+id/tvvelocity" />
+
+    <EditText
+        android:id="@+id/edttime"
+        android:layout_width="117dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvtime"
+        app:layout_constraintTop_toBottomOf="@+id/edtdistance" />
+
+    <TextView
+        android:id="@+id/tvdistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="53dp"
+        android:text="@string/tvdistance"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvvelocity" />
+
+    <TextView
+        android:id="@+id/tvkm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="55dp"
+        android:text="@string/tvkm"
+        app:layout_constraintStart_toEndOf="@+id/edtdistance"
+        app:layout_constraintTop_toBottomOf="@+id/tvvelocity" />
+
+    <TextView
+        android:id="@+id/tvtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="59dp"
+        android:text="@string/tvtime"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvdistance" />
+
+    <TextView
+        android:id="@+id/tvhours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="69dp"
+        android:text="@string/tvhours"
+        app:layout_constraintStart_toEndOf="@+id/edttime"
+        app:layout_constraintTop_toBottomOf="@+id/tvkm" />
+
+    <Button
+        android:id="@+id/btncalculatevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/btncalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edttime" />
+
+    <TextView
+        android:id="@+id/tvresultsvel"
+        android:layout_width="276dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="@string/tvresults"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncalculatevel"
+        tools:visibility="invisible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

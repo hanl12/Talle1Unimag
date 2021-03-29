@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VoltageActivity">
+
+    <TextView
+        android:id="@+id/ttitlevoltage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/btnvoltage"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/tvamp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <TextView
+        android:id="@+id/tvamp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="116dp"
+        android:text="@string/tvamp2"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <TextView
+        android:id="@+id/tvamp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="224dp"
+        android:text="@string/tvr1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <TextView
+        android:id="@+id/tvamp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="284dp"
+        android:text="@string/tvr2"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <TextView
+        android:id="@+id/tvamp5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="352dp"
+        android:text="@string/tvr3"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <EditText
+        android:id="@+id/edtAmp"
+        android:layout_width="107dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvamp"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <Spinner
+        android:id="@+id/spnresis"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAmp" />
+
+    <TextView
+        android:id="@+id/tvresists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/tvresists"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnresis" />
+
+    <EditText
+        android:id="@+id/edtr1"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvamp3"
+        app:layout_constraintTop_toBottomOf="@+id/tvresists" />
+
+    <EditText
+        android:id="@+id/edtr3"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/tvamp4"
+        app:layout_constraintTop_toBottomOf="@+id/edtr1" />
+
+    <EditText
+        android:id="@+id/edtr2"
+        android:layout_width="105dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvamp4"
+        app:layout_constraintTop_toBottomOf="@+id/edtr1" />
+
+    <CheckBox
+        android:id="@+id/cbpar"
+        android:layout_width="185dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/cbpar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtr3" />
+
+    <Button
+        android:id="@+id/btncalculatevol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:text="@string/btncalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbpar" />
+
+    <TextView
+        android:id="@+id/tva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/A"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edtAmp"
+        app:layout_constraintTop_toBottomOf="@+id/ttitlevoltage" />
+
+    <TextView
+        android:id="@+id/tvr1o"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/tvr1o"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edtr1"
+        app:layout_constraintTop_toBottomOf="@+id/tvresists" />
+
+    <TextView
+        android:id="@+id/tvr1o4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/tvr1o"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edtr1"
+        app:layout_constraintTop_toBottomOf="@+id/tvresists" />
+
+    <TextView
+        android:id="@+id/tvr1o3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="156dp"
+        android:text="@string/tvr1o"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edtr1"
+        app:layout_constraintTop_toBottomOf="@+id/tvresists" />
+
+    <TextView
+        android:id="@+id/tvresultsvol"
+        android:layout_width="329dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="13dp"
+        android:text="@string/tvresultsvol"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncalculatevol" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

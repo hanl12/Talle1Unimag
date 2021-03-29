@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller1">
-        <activity android:name=".TextActivity"></activity>
+        <activity android:name=".VoltageActivity"></activity>
+        <activity android:name=".ForceActivity" />
+        <activity android:name=".VelocityActivity" />
+        <activity android:name=".PhisicsActivity" />
+        <activity android:name=".TextActivity" />
         <activity android:name=".GeometryActivity" />
         <activity
             android:name=".HomeActivity"

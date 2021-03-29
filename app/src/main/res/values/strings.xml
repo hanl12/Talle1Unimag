@@ -42,5 +42,27 @@
     <string name="tvtextresults" />
     <string name="tvtext1">Escriba acontinuación su texto</string>
     <string name="btntransform">TRANSFORMAR</string>
+    <string name="tvphisics">FÍSICA</string>
+    <string name="btnvelocity">CALCULAR VELOCIDAD</string>
+    <string name="btnforce">CALCULAR FUERZA</string>
+    <string name="btnvoltage">CALCULAR VOLTAJE</string>
+    <string name="tvdistance">Distancia:</string>
+    <string name="tvkm">km</string>
+    <string name="tvtime">Tiempo:</string>
+    <string name="tvhours">horas</string>
+    <string name="tvmass">Masa:</string>
+    <string name="tvkg">kg</string>
+    <string name="tvacel">Aceleración</string>
+    <string name="tvms">m/s2</string>
+    <string name="tvamp">Amperaje</string>
+    <string name="tvamp2">Resistencias</string>
+    <string name="tvresists">Valores de las resistencias</string>
+    <string name="tvr1">R1</string>
+    <string name="tvr2">R2</string>
+    <string name="tvr3">R3</string>
+    <string name="cbpar">Resistencias paralelas</string>
+    <string name="A">A</string>
+    <string name="tvr1o">Ω</string>
+    <string name="tvresultsvol" />
 
 </resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhisicsActivity">
+
+    <TextView
+        android:id="@+id/tvphisics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/tvphisics"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnvelocity"
+        android:layout_width="256dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="61dp"
+        android:text="@string/btnvelocity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvphisics" />
+
+    <Button
+        android:id="@+id/btnforce"
+        android:layout_width="256dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/btnforce"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnvelocity" />
+
+    <Button
+        android:id="@+id/btnvoltage"
+        android:layout_width="256dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/btnvoltage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnforce" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

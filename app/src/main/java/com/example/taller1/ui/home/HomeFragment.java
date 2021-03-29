@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.taller1.GeometryActivity;
 import com.example.taller1.HomeActivity;
+import com.example.taller1.PhisicsActivity;
 import com.example.taller1.R;
 import com.example.taller1.TextActivity;
 
@@ -61,12 +62,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btnphisics:
-
+                Intent i2 = new Intent(getActivity(), PhisicsActivity.class);
+                startActivity(i2);
                 break;
 
             case R.id.btntext:
-                Intent i2 = new Intent(getActivity(), TextActivity.class);
-                startActivity(i2);
+                Intent i3 = new Intent(getActivity(), TextActivity.class);
+                startActivity(i3);
                 break;
         }
     }

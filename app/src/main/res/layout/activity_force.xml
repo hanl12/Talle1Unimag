@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForceActivity">
+
+    <TextView
+        android:id="@+id/tvforce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/btnforce"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvmass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/tvmass"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvforce" />
+
+    <EditText
+        android:id="@+id/edtmass"
+        android:layout_width="127dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvmass"
+        app:layout_constraintTop_toBottomOf="@+id/tvforce" />
+
+    <EditText
+        android:id="@+id/edtaceleration"
+        android:layout_width="127dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvmass"
+        app:layout_constraintTop_toBottomOf="@+id/tvforce" />
+
+    <TextView
+        android:id="@+id/tvkg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="@string/tvkg"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edtmass"
+        app:layout_constraintTop_toBottomOf="@+id/tvforce" />
+
+    <TextView
+        android:id="@+id/tvms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="@string/tvms"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/edtmass"
+        app:layout_constraintTop_toBottomOf="@+id/tvforce" />
+
+    <TextView
+        android:id="@+id/tvacel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/tvacel"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvmass" />
+
+    <Button
+        android:id="@+id/btncalculatefor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="42dp"
+        android:text="@string/btncalculate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtaceleration" />
+
+    <TextView
+        android:id="@+id/tvresultsfor"
+        android:layout_width="295dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
+        android:text="@string/tvresults"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncalculatefor" />
+</androidx.constraintlayout.widget.ConstraintLayout>
