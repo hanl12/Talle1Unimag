@@ -207,6 +207,7 @@
         android:layout_height="39dp"
         android:layout_marginStart="41dp"
         android:layout_marginTop="5dp"
+        android:gravity="center"
         android:text="@string/tvresultsvol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btncalculatevol" />

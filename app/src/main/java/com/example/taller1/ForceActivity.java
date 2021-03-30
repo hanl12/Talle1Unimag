@@ -2,6 +2,7 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 
 public class ForceActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btncalculatefor;
+    private Button btncalculatefor,btnback;
     private EditText edtmass, edtaceleration;
     private TextView tvresults;
 
@@ -22,6 +23,9 @@ public class ForceActivity extends AppCompatActivity implements View.OnClickList
 
         btncalculatefor = (Button)findViewById(R.id.btncalculatefor);
         btncalculatefor.setOnClickListener(this);
+
+        btnback = (Button)findViewById(R.id.btnback9);
+        btnback.setOnClickListener(this);
 
         edtmass = (EditText)findViewById(R.id.edtmass);
         edtaceleration = (EditText)findViewById(R.id.edtaceleration);
@@ -35,6 +39,11 @@ public class ForceActivity extends AppCompatActivity implements View.OnClickList
             case R.id.btncalculatefor:
                 calculateForce();
                 tvresults.setVisibility(v.VISIBLE);
+                break;
+
+            case R.id.btnback9:
+                Intent i4 = new Intent(getApplicationContext(),PhisicsActivity.class);
+                startActivity(i4);
                 break;
         }
     }
