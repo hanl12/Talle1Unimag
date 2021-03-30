@@ -1,7 +1,10 @@
 package com.example.taller1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,9 +21,12 @@ import static java.util.stream.Stream.*;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnsave;
+    private Button btnsave, btnback;
     private EditText edtname, edtlname, edtemailr, edtpassr;
     private Spinner spnsex;
+
+    private String message = "";
+    private int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         btnsave = (Button)findViewById(R.id.btnsave);
         btnsave.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback3);
+        btnback.setOnClickListener(this);
+
 
         edtname = (EditText)findViewById(R.id.edtname);
         edtlname = (EditText)findViewById(R.id.edtlname);
@@ -47,6 +56,11 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btnsave:
                 validateFields();
                 break;
+
+            case R.id.btnback3:
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
+                break;
         }
     }
 
@@ -60,15 +74,41 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if(!isEmpty(name) && !isEmpty(lname) && !isEmpty(email) && !isEmpty(pass)){
             if(pass.length() >= 6){
                 MainActivity.CreateUser(name,lname,email,pass,sex);
-                Toast.makeText(getApplicationContext(), "Usuario registrado correctamente.", Toast.LENGTH_LONG).show();
+                message = "Usuario registrado correctamente";
+                flag = 1;
+                createAlert(message);
             }
             else{
-                Toast.makeText(getApplicationContext(), "La contraseña debe tener mínimo 6 caracteres.", Toast.LENGTH_LONG).show();
+                message = "La contraseña debe tener mínimo 6 caracteres.";
+                createAlert(message);
             }
         }
         else{
-            Toast.makeText(getApplicationContext(), "Rellene todos los campos.", Toast.LENGTH_LONG).show();
+            message = "Rellene todos los campos.";
+            createAlert(message);
         }
-
     }
+
+    private void createAlert(String message) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("");
+        alert.setMessage(message);
+        if(flag == 0){
+            alert.setPositiveButton("OK",null);
+        }
+        else{
+            alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    flag = 0;
+                    startActivity(i);
+                }
+            });
+        }
+        alert.show();
+    }
+
+    @Override
+    public void onBackPressed(){}
 }

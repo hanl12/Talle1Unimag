@@ -54,9 +54,19 @@
         android:id="@+id/btnchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="32dp"
         android:text="@string/btnchange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtcpass" />
+
+    <Button
+        android:id="@+id/btnback1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/btnback"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtcpass" />
 </androidx.constraintlayout.widget.ConstraintLayout>

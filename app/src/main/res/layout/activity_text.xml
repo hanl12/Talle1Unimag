@@ -58,4 +58,14 @@
         android:text="@string/btntransform"
         app:layout_constraintStart_toEndOf="@+id/spntext"
         app:layout_constraintTop_toBottomOf="@+id/edttext" />
+
+    <Button
+        android:id="@+id/btnback6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/btnback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spntext" />
 </androidx.constraintlayout.widget.ConstraintLayout>

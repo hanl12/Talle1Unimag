@@ -3,6 +3,7 @@ package com.example.taller1;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,9 +18,9 @@ public class ChangePassActivity extends AppCompatActivity implements View.OnClic
 
     private EditText edtnpass, edtcpass;
 
-    private Button btnchange;
+    private Button btnchange, btnback;
 
-    private int index;
+    private int index,flag = 0;
     private String message = "";
 
     @Override
@@ -32,6 +33,8 @@ public class ChangePassActivity extends AppCompatActivity implements View.OnClic
 
         btnchange = (Button)findViewById(R.id.btnchange);
         btnchange.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback1);
+        btnback.setOnClickListener(this);
 
         index = getIntent().getIntExtra("index",-1);
 
@@ -48,6 +51,11 @@ public class ChangePassActivity extends AppCompatActivity implements View.OnClic
                     validate();
                 }
                 break;
+
+            case R.id.btnback1:
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
+                break;
         }
     }
 
@@ -62,9 +70,8 @@ public class ChangePassActivity extends AppCompatActivity implements View.OnClic
                     ArrayList<Users> Aux = MainActivity.UsersA;
                     Aux.get(index).setPassword(npass);
                     message = "Contraseña cambiada exitosamente";
+                    flag = 1;
                     createAlert(message);
-                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(i);
                 }
                 else{
                     message = "Las contraseñas deben tener mínimo 6 caracteres";
@@ -82,7 +89,21 @@ public class ChangePassActivity extends AppCompatActivity implements View.OnClic
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("");
         alert.setMessage(message);
-        alert.setPositiveButton("OK",null);
+        if(flag == 0){
+            alert.setPositiveButton("OK",null);
+        }
+        else{
+            alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    flag = 0;
+                    startActivity(i);
+                }
+            });
+        }
         alert.show();
     }
+    @Override
+    public void onBackPressed(){}
 }

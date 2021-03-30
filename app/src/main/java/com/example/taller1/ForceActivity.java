@@ -52,4 +52,6 @@ public class ForceActivity extends AppCompatActivity implements View.OnClickList
             tvresults.setText("El resultado de la fuerza es: " + results + " N");
         }
     }
+    @Override
+    public void onBackPressed(){}
 }

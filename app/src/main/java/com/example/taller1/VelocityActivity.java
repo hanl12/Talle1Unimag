@@ -2,6 +2,7 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 
 public class VelocityActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btncalculatevel;
+    private Button btncalculatevel, btnback;
     private EditText edtdistance, edttime;
     private TextView tvresults;
 
@@ -22,6 +23,8 @@ public class VelocityActivity extends AppCompatActivity implements View.OnClickL
 
         btncalculatevel = (Button)findViewById(R.id.btncalculatevel);
         btncalculatevel.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback7);
+        btnback.setOnClickListener(this);
 
         edtdistance = (EditText)findViewById(R.id.edtdistance);
         edttime = (EditText)findViewById(R.id.edttime);
@@ -35,6 +38,11 @@ public class VelocityActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btncalculatevel:
                 calculateVelocity();
                 tvresults.setVisibility(v.VISIBLE);
+                break;
+
+            case R.id.btnback7:
+                Intent i4 = new Intent(getApplicationContext(),PhisicsActivity.class);
+                startActivity(i4);
                 break;
         }
     }
@@ -51,6 +59,7 @@ public class VelocityActivity extends AppCompatActivity implements View.OnClickL
             double results = Math.round(result*100.0)/100.0;
             tvresults.setText("El resultado de la velocidad es: " + results + " km/h");
         }
-
     }
+    @Override
+    public void onBackPressed(){}
 }

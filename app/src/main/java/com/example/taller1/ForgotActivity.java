@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,7 +16,8 @@ import java.util.ArrayList;
 public class ForgotActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtemail, edtcode;
-    private Button btncode, btnvalidate;
+    private Button btncode, btnvalidate, btnback;
+    private TextView tvcode;
     public int index = -1;
 
     public String code = "XYZ987";
@@ -29,12 +31,15 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
 //        EditTexts
         edtcode = (EditText)findViewById(R.id.edtcode);
         edtemail = (EditText)findViewById(R.id.edtemail);
+        tvcode = (TextView)findViewById(R.id.tvcode);
 
 //        Buttons
         btncode = (Button)findViewById(R.id.btncode);
         btncode.setOnClickListener(this);
         btnvalidate = (Button)findViewById(R.id.btnvalidate);
         btnvalidate.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback2);
+        btnback.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +52,9 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
                     createAlert(message);
                 }
                 else{
+                    edtcode.setVisibility(v.VISIBLE);
+                    btnvalidate.setVisibility(v.VISIBLE);
+                    tvcode.setVisibility(v.VISIBLE);
                     message = "Código enviado";
                     createAlert(message);
                     Toast.makeText(getApplicationContext(), "CÓDIGO: XYZ987", Toast.LENGTH_LONG).show();
@@ -63,6 +71,11 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
                     String message = "Código incorrecto";
                     createAlert(message);
                 }
+                break;
+
+            case R.id.btnback2:
+                Intent i1 = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i1);
                 break;
         }
     }
@@ -88,4 +101,6 @@ public class ForgotActivity extends AppCompatActivity implements View.OnClickLis
         }
         return -1;
     }
+    @Override
+    public void onBackPressed(){}
 }

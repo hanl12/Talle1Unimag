@@ -31,6 +31,6 @@ public class HomeActivity extends AppCompatActivity{
         NavigationUI.setupWithNavController(navView, navController);
 
     }
-
-
+    @Override
+    public void onBackPressed(){}
 }

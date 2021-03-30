@@ -2,6 +2,7 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 
 public class GeometryActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btncalculate;
+    private Button btncalculate, btnback;
     private EditText edtx1,edtx2,edty1,edty2;
     private Spinner spnoperationg;
     private TextView tvtextresults, tvresults;
@@ -30,6 +31,9 @@ public class GeometryActivity extends AppCompatActivity implements View.OnClickL
 
         btncalculate = (Button)findViewById(R.id.btncalculateg);
         btncalculate.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback4);
+        btnback.setOnClickListener(this);
+
 
         edtx1 = (EditText)findViewById(R.id.edtx1);
         edtx2 = (EditText)findViewById(R.id.edtx2);
@@ -57,6 +61,11 @@ public class GeometryActivity extends AppCompatActivity implements View.OnClickL
                 else{
                     Toast.makeText(getApplicationContext(), "Llene todos los campos.", Toast.LENGTH_LONG).show();
                 }
+                break;
+
+            case R.id.btnback4:
+                Intent i1 = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(i1);
                 break;
         }
     }
@@ -132,4 +141,6 @@ public class GeometryActivity extends AppCompatActivity implements View.OnClickL
 
         tvtextresults.setText("El punto número " + p1 + " y el punto número " + p2);
     }
+    @Override
+    public void onBackPressed(){}
 }

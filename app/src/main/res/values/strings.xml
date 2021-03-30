@@ -64,5 +64,6 @@
     <string name="A">A</string>
     <string name="tvr1o">Ω</string>
     <string name="tvresultsvol" />
+    <string name="btnback">VOLVER</string>
 
 </resources>

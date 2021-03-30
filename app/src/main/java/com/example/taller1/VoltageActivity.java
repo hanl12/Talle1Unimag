@@ -2,6 +2,7 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,7 +18,7 @@ import android.widget.Toast;
 
 public class VoltageActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btncalculatevol;
+    private Button btncalculatevol, btnback;
     private EditText edtamp, edtr1,edtr2,edtr3;
     private Spinner spnresis;
     private TextView tvamp5, tvr1o3, tvresults;
@@ -33,6 +34,8 @@ public class VoltageActivity extends AppCompatActivity implements View.OnClickLi
 
         btncalculatevol = (Button)findViewById(R.id.btncalculatevol);
         btncalculatevol.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback8);
+        btnback.setOnClickListener(this);
 
         edtamp = (EditText)findViewById(R.id.edtAmp);
         edtr1 = (EditText)findViewById(R.id.edtr1);
@@ -68,16 +71,9 @@ public class VoltageActivity extends AppCompatActivity implements View.OnClickLi
                         break;
                 }
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-
-
-
+            public void onNothingSelected(AdapterView<?> parent) {}}
+        );
     }
 
     @Override
@@ -86,6 +82,11 @@ public class VoltageActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.btncalculatevol:
                 calculateVoltage();
                 tvresults.setVisibility(v.VISIBLE);
+                break;
+
+            case R.id.btnback8:
+                Intent i4 = new Intent(getApplicationContext(),PhisicsActivity.class);
+                startActivity(i4);
                 break;
         }
     }
@@ -134,5 +135,6 @@ public class VoltageActivity extends AppCompatActivity implements View.OnClickLi
             Toast.makeText(getApplicationContext(), "Llene todos los campos", Toast.LENGTH_LONG).show();
         }
     }
-
+    @Override
+    public void onBackPressed(){}
 }

@@ -46,8 +46,10 @@
         android:layout_marginTop="76dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btncode" />
+        app:layout_constraintTop_toBottomOf="@+id/btncode"
+        tools:visibility="invisible" />
 
     <TextView
         android:id="@+id/tvemail"
@@ -68,6 +70,7 @@
         android:layout_marginTop="41dp"
         android:text="@string/tvcode"
         android:textSize="18sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btncode" />
 
@@ -78,6 +81,18 @@
         android:layout_marginStart="159dp"
         android:layout_marginTop="19dp"
         android:text="@string/btnvalidate"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtcode" />
+        app:layout_constraintTop_toBottomOf="@+id/edtcode"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnback2"
+        android:layout_width="99dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/btnback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnvalidate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

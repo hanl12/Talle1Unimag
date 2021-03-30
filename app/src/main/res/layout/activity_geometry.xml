@@ -151,4 +151,14 @@
         app:layout_constraintTop_toBottomOf="@+id/btncalculateg"
         tools:visibility="invisible" />
 
+    <Button
+        android:id="@+id/btnback4"
+        android:layout_width="109dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/btnback"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvtextresults" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

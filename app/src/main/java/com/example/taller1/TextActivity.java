@@ -2,6 +2,7 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 public class TextActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btntransform;
+    private Button btntransform, btnback;
     private EditText edttext;
     private Spinner spntext;
 
@@ -31,6 +32,8 @@ public class TextActivity extends AppCompatActivity implements View.OnClickListe
 
         btntransform = (Button)findViewById(R.id.btntransform);
         btntransform.setOnClickListener(this);
+        btnback = (Button)findViewById(R.id.btnback6);
+        btnback.setOnClickListener(this);
 
         edttext = (EditText)findViewById(R.id.edttext);
 
@@ -49,6 +52,11 @@ public class TextActivity extends AppCompatActivity implements View.OnClickListe
                     String option = spntext.getSelectedItem().toString();
                     editText(option);
                 }
+                break;
+
+            case R.id.btnback6:
+                Intent i4 = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(i4);
                 break;
         }
     }
@@ -81,4 +89,6 @@ public class TextActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+    @Override
+    public void onBackPressed(){}
 }

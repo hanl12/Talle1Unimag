@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class PhisicsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnvelocity, btnforce, btnvoltage;
+    private Button btnvelocity, btnforce, btnvoltage, btnback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,9 @@ public class PhisicsActivity extends AppCompatActivity implements View.OnClickLi
 
         btnvoltage = (Button)findViewById(R.id.btnvoltage);
         btnvoltage.setOnClickListener(this);
+
+        btnback = (Button)findViewById(R.id.btnback5);
+        btnback.setOnClickListener(this);
     }
 
     @Override
@@ -43,6 +46,13 @@ public class PhisicsActivity extends AppCompatActivity implements View.OnClickLi
                 Intent i3 = new Intent(getApplicationContext(),VoltageActivity.class);
                 startActivity(i3);
                 break;
+
+            case R.id.btnback5:
+                Intent i4 = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(i4);
+                break;
         }
     }
+    @Override
+    public void onBackPressed(){}
 }

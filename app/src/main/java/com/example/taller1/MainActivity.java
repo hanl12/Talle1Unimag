@@ -2,40 +2,32 @@ package com.example.taller1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.RadioGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button btnlogin, btnsignup;
-    private EditText edtuser, edtpass;
-    private CheckBox cbremb, cbtac;
-    private TextView tvforgot, tvida;
+    private Button btnLogin, btnSignUp;
+    private ImageButton btnSeePass;
+    private EditText edtUser, edtPass;
+    private CheckBox cbRemember, cbTac;
+    private TextView tvForgot, tvIda;
     public static ArrayList<Users> UsersA = new ArrayList<Users>();
 
+    private int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,32 +40,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CreateUser("Test", "Test", "tes@t.com", "test",'F');
 
 //        Buttons
-        btnlogin = (Button)findViewById(R.id.btnlogin);
-        btnlogin.setOnClickListener(this);
-        btnsignup = (Button)findViewById(R.id.btnsignup);
-        btnsignup.setOnClickListener(this);
-        tvforgot = (TextView)findViewById(R.id.tvforgot);
-        tvforgot.setOnClickListener(this);
-        tvida = (TextView)findViewById(R.id.tvida);
+        btnLogin = (Button)findViewById(R.id.btnlogin);
+        btnLogin.setOnClickListener(this);
+        btnSignUp = (Button)findViewById(R.id.btnsignup);
+        btnSignUp.setOnClickListener(this);
+        btnSeePass = (ImageButton)findViewById(R.id.btnSeePass);
+        btnSeePass.setOnClickListener(this);
+
+
+        tvForgot = (TextView)findViewById(R.id.tvforgot);
+        tvForgot.setOnClickListener(this);
+        tvIda = (TextView)findViewById(R.id.tvida);
 
 //        CheckBoxs
-        cbremb = (CheckBox)findViewById(R.id.cbremb);
-        cbtac = (CheckBox)findViewById(R.id.cbtac);
-        cbtac.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cbRemember = (CheckBox)findViewById(R.id.cbremb);
+        cbTac = (CheckBox)findViewById(R.id.cbtac);
+        cbTac.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    btnlogin.setEnabled(true);
+                    btnLogin.setEnabled(true);
                 }
                 else{
-                    btnlogin.setEnabled(false);
+                    btnLogin.setEnabled(false);
                 }
             }
         });
 
 //        EditTexts
-        edtuser = (EditText)findViewById(R.id.edtuser);
-        edtpass = (EditText)findViewById(R.id.edtpass);
+        edtUser = (EditText)findViewById(R.id.edtuser);
+        edtPass = (EditText)findViewById(R.id.edtpass);
 
         uploadPreferences();
 
@@ -84,8 +80,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String userG = preferences.getString("user", "");
         String passG = preferences.getString("pass", "");
 
-        edtuser.setText(userG);
-        edtpass.setText(passG);
+        edtUser.setText(userG);
+        edtPass.setText(passG);
     }
 
     @Override
@@ -94,10 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnlogin:
                 if(validateEmpty()){
                     if(validateUser()){
-                        tvida.setVisibility(v.INVISIBLE);
-                        if(cbremb.isChecked()){
-                            String userS = edtuser.getText().toString();
-                            String passS = edtpass.getText().toString();
+                        tvIda.setVisibility(v.INVISIBLE);
+                        if(cbRemember.isChecked()){
+                            String userS = edtUser.getText().toString();
+                            String passS = edtPass.getText().toString();
                             savePreferences(userS,passS);
                         }
                         else{
@@ -107,11 +103,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(i2);
                     }
                     else{
-                        tvida.setVisibility(v.VISIBLE);
+                        tvIda.setText("DATOS INVÁLIOS");
+                        tvIda.setVisibility(v.VISIBLE);
                     }
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "Ingrese los datos.", Toast.LENGTH_LONG).show();
+                    tvIda.setText("INGRESE SUS DATOS");
+                    tvIda.setVisibility(v.VISIBLE);
                 }
                 break;
 
@@ -123,6 +121,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tvforgot:
                 Intent i2 = new Intent(getApplicationContext(), ForgotActivity.class);
                 startActivity(i2);
+                break;
+
+            case R.id.btnSeePass:
+                if(flag == 0){
+                    edtPass.setInputType(InputType.TYPE_CLASS_TEXT);
+                    flag = 1;
+                }
+                else{
+                    edtPass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    flag = 0;
+                }
                 break;
         }
     }
@@ -143,11 +152,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public boolean validateEmpty(){
-        if (TextUtils.isEmpty(edtuser.getText().toString())){
+        if (TextUtils.isEmpty(edtUser.getText().toString())){
             return false;
         }
         else{
-            if(TextUtils.isEmpty(edtpass.getText().toString())){
+            if(TextUtils.isEmpty(edtPass.getText().toString())){
                 return false;
             } else {
                return true;
@@ -157,9 +166,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public boolean validateUser(){
         for(Users user : UsersA){
-            if(edtuser.getText().toString().equals(user.getEmail().toString())){
+            if(edtUser.getText().toString().equals(user.getEmail().toString())){
 
-                if (edtpass.getText().toString().equals(user.getPassword().toString())){
+                if (edtPass.getText().toString().equals(user.getPassword().toString())){
                     return true;
                 }
                 break;
@@ -167,4 +176,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return false;
     }
+    @Override
+    public void onBackPressed(){}
 }
